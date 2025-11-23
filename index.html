@@ -545,15 +545,16 @@
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const surveyUrl = 'https://gmu.az1.qualtrics.com/jfe/form/SV_eJcxun5CS6HHAVg';
+                const surveyUrl = 'https://gmusom.az1.qualtrics.com/jfe/form/SV_5b8gzO5cMPxKY9U';
                 
                 // Navigate to survey
-                // If this window was opened as a popup, it may close automatically
-                // Otherwise, it will navigate to the survey
                 window.location.href = surveyUrl;
                 
                 // Try to close the window (works if opened by JavaScript/popup)
                 // Note: Browsers block closing tabs that user opened directly
+                setTimeout(() => {
+                    window.close();
+                }, 100);
                 setTimeout(() => {
                     try {
                         window.close();
